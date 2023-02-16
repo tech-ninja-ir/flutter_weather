@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_weather/main.dart';
-import 'package:flutter_weather/src/themes.dart';
+import 'package:flutter_weather/src/utils/constants.dart';
 import 'package:flutter_weather/src/utils/converters.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -10,86 +10,88 @@ class SettingsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: appTheme.primaryColor,
+        backgroundColor: CONSTANTS.primaryAppColor,
         title: Text("Settings"),
       ),
       body: Container(
         padding: EdgeInsets.only(left: 10, right: 10, top: 15),
-        color: appTheme.primaryColor,
+        color: CONSTANTS.primaryAppColor,
         child: ListView(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                "Theme",
-                style: TextStyle(
-                  color: appTheme.accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(8), topRight: Radius.circular(8)),
-                color: AppStateContainer.of(context)
-                    .theme
-                    .accentColor
-                    .withOpacity(0.1),
-              ),
-              padding: EdgeInsets.only(left: 10, right: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    "Dark",
-                    style: TextStyle(color: appTheme.accentColor),
-                  ),
-                  Radio(
-                    value: Themes.DARK_THEME_CODE,
-                    groupValue: AppStateContainer.of(context).themeCode,
-                    onChanged: (value) {
-                      AppStateContainer.of(context).updateTheme(value);
-                    },
-                    activeColor: appTheme.accentColor,
-                  )
-                ],
-              ),
-            ),
-            Divider(
-              color: appTheme.primaryColor,
-              height: 1,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(8),
-                    bottomRight: Radius.circular(8)),
-                color: AppStateContainer.of(context)
-                    .theme
-                    .accentColor
-                    .withOpacity(0.1),
-              ),
-              padding: EdgeInsets.only(left: 10, right: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    "Light",
-                    style: TextStyle(color: appTheme.accentColor),
-                  ),
-                  Radio(
-                    value: Themes.LIGHT_THEME_CODE,
-                    groupValue: AppStateContainer.of(context).themeCode,
-                    onChanged: (value) {
-                      AppStateContainer.of(context).updateTheme(value);
-                    },
-                    activeColor: appTheme.accentColor,
-                  )
-                ],
-              ),
-            ),
+            // todo: them section
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: Text(
+            //     "Theme",
+            //     style: TextStyle(
+            //       color: appTheme.accentColor,
+            //       fontWeight: FontWeight.bold,
+            //       fontSize: 18,
+            //     ),
+            //   ),
+            // ),
+            // Container(
+            //   decoration: BoxDecoration(
+            //     borderRadius: BorderRadius.only(
+            //         topLeft: Radius.circular(8), topRight: Radius.circular(8)),
+            //     color: AppStateContainer.of(context)
+            //         .theme
+            //         .accentColor
+            //         .withOpacity(0.1),
+            //   ),
+            //   padding: EdgeInsets.only(left: 10, right: 10),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     children: <Widget>[
+            //       Text(
+            //         "Dark",
+            //         style: TextStyle(color: appTheme.accentColor),
+            //       ),
+            //       Radio(
+            //         value: Themes.DARK_THEME_CODE,
+            //         groupValue: AppStateContainer.of(context).themeCode,
+            //         onChanged: (value) {
+            //           AppStateContainer.of(context).updateTheme(value);
+            //         },
+            //         activeColor: appTheme.accentColor,
+            //       )
+            //     ],
+            //   ),
+            // ),
+            // Divider(
+            //   color: appTheme.primaryColor,
+            //   height: 1,
+            // ),
+            // Container(
+            //   decoration: BoxDecoration(
+            //     borderRadius: BorderRadius.only(
+            //         bottomLeft: Radius.circular(8),
+            //         bottomRight: Radius.circular(8)),
+            //     color: AppStateContainer.of(context)
+            //         .theme
+            //         .accentColor
+            //         .withOpacity(0.1),
+            //   ),
+            //   padding: EdgeInsets.only(left: 10, right: 10),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     children: <Widget>[
+            //       Text(
+            //         "Light",
+            //         style: TextStyle(color: appTheme.accentColor),
+            //       ),
+            //       Radio(
+            //         value: Themes.LIGHT_THEME_CODE,
+            //         groupValue: AppStateContainer.of(context).themeCode,
+            //         onChanged: (value) {
+            //           AppStateContainer.of(context).updateTheme(value);
+            //         },
+            //         activeColor: appTheme.accentColor,
+            //       )
+            //     ],
+            //   ),
+            // ),
+
             Padding(
               padding:
                   const EdgeInsets.only(top: 15, left: 8, right: 8, bottom: 8),

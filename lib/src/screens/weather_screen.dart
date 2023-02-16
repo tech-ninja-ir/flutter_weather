@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_weather/main.dart';
 import 'package:flutter_weather/src/bloc/weather_event.dart';
 import 'package:flutter_weather/src/bloc/weather_state.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_weather/src/utils/constants.dart';
 import 'package:flutter_weather/src/widgets/weather_widget.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:intl/intl.dart';
@@ -51,7 +52,7 @@ class _WeatherScreenState extends State<WeatherScreen>
 
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: appTheme.primaryColor,
+          backgroundColor: CONSTANTS.primaryAppColor,
           elevation: 0,
           title: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -88,7 +89,7 @@ class _WeatherScreenState extends State<WeatherScreen>
         body: Material(
           child: Container(
             constraints: BoxConstraints.expand(),
-            decoration: BoxDecoration(color: appTheme.primaryColor),
+            decoration: BoxDecoration(color: CONSTANTS.primaryAppColor),
             child: FadeTransition(
               opacity: _fadeAnimation,
               child: BlocBuilder<WeatherBloc, WeatherState>(
