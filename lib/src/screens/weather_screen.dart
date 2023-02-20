@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_weather/main.dart';
 import 'package:flutter_weather/src/bloc/weather_event.dart';
 import 'package:flutter_weather/src/bloc/weather_state.dart';
@@ -54,16 +55,26 @@ class _WeatherScreenState extends State<WeatherScreen>
         appBar: AppBar(
           backgroundColor: CONSTANTS.primaryAppColor,
           elevation: 0,
-          title: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
+              SvgPicture.asset(
+                "assets/img/topolo-logo-light.svg",
+                semanticsLabel: 'Acme Logo',
+                width: 80,
+              ),
               Text(
                 DateFormat('EEEE, d MMMM yyyy').format(DateTime.now()),
                 style: TextStyle(
                   color: appTheme.accentColor.withAlpha(80),
                   fontSize: 14,
                 ),
-              )
+              ),
+              SvgPicture.asset(
+                "assets/img/topolo-icon-single-light.svg",
+                semanticsLabel: 'Acme Logo',
+                width: 60,
+              ),
             ],
           ),
           actions: <Widget>[

@@ -43,7 +43,7 @@ class ValueTile extends StatelessWidget {
         ),
         Text(
           this.value,
-          style: TextStyle(color: appTheme.accentColor),
+          style: TextStyle(fontSize: 16, color: appTheme.accentColor),
         ),
       ],
     );

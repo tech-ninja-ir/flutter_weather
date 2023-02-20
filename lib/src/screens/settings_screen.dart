@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_weather/main.dart';
 import 'package:flutter_weather/src/utils/constants.dart';
 import 'package:flutter_weather/src/utils/converters.dart';
@@ -11,7 +12,21 @@ class SettingsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: CONSTANTS.primaryAppColor,
-        title: Text("Settings"),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SvgPicture.asset(
+              "assets/img/topolo-logo-light.svg",
+              semanticsLabel: 'Acme Logo',
+              width: 80,
+            ),
+            SvgPicture.asset(
+              "assets/img/topolo-icon-single-light.svg",
+              semanticsLabel: 'Acme Logo',
+              width: 60,
+            ),
+          ],
+        ),
       ),
       body: Container(
         padding: EdgeInsets.only(left: 10, right: 10, top: 15),
@@ -119,7 +134,7 @@ class SettingsScreen extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     "Celsius",
-                    style: TextStyle(color: appTheme.accentColor),
+                    style: TextStyle(color: appTheme.accentColor, fontSize: 16),
                   ),
                   Radio(
                     value: TemperatureUnit.celsius.index,
@@ -149,7 +164,7 @@ class SettingsScreen extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     "Fahrenheit",
-                    style: TextStyle(color: appTheme.accentColor),
+                    style: TextStyle(color: appTheme.accentColor, fontSize: 16),
                   ),
                   Radio(
                     value: TemperatureUnit.fahrenheit.index,
@@ -184,7 +199,7 @@ class SettingsScreen extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     "Kelvin",
-                    style: TextStyle(color: appTheme.accentColor),
+                    style: TextStyle(color: appTheme.accentColor, fontSize: 16),
                   ),
                   Radio(
                     value: TemperatureUnit.kelvin.index,
